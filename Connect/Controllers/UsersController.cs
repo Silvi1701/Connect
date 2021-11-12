@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Connect.Controllers
 {
     [Authorize]
+    
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -29,9 +30,7 @@ namespace Connect.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
-            var users = await _userRepository.GetUsersAsync();
-            //var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-
+            var users = await _userRepository.GetMembersAsync();
             return Ok(users);
         }
 
