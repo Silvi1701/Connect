@@ -50,7 +50,7 @@ namespace Connect.Data
             
             return await PagedList<MemberDto>.CreateAsync(query.ProjectTo<MemberDto>(_mapper
                 .ConfigurationProvider).AsNoTracking(), 
-                    userParams.pageNumber,userParams.PageSize);
+                    userParams.PageNumber,userParams.PageSize);
         }
 
         public async Task<AppUser> GetUserByIdAsync(int id)
